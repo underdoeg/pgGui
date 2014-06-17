@@ -112,7 +112,7 @@ public:
     virtual bool handleMouse( ofPoint mouse, bool bPressed ){
         
         
-        if (!bVisible) return;
+        if (!bVisible) return false;
         
         
         bool bAnyChildren = false;
@@ -224,11 +224,11 @@ class spacer : public node {
 public:
     
     spacer(){
-        node::node();
+        //node::node();
     }
     spacer(string _uniqueName, float width, float height, margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         uniqueName = _uniqueName;
         setup(width, height);
         
@@ -261,7 +261,7 @@ public:
     
     region(margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         bDrawOutline = false;
     }
     
@@ -344,7 +344,7 @@ public:
     
     scrollableRegion(margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
     }
     
     
@@ -411,7 +411,7 @@ public:
     
     imageButton(margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
     }
     
     imageButton(string _uniqueName, string fileName,margin m = margin()){
@@ -473,13 +473,13 @@ public:
     
     textLabel(margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         bDrawBackground = true;
     }
     
     textLabel( string _uniqueName, string str, ofTrueTypeFont * _font, int width = 0, bool bDrawBg = false,margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         uniqueName = _uniqueName;
         bDrawBackground = bDrawBg;
         font = _font;
@@ -535,14 +535,14 @@ public:
     
     textLabelToggle(margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         bDrawBackground = true;
         bToggled = false;
     }
     
     textLabelToggle(string _uniqueName, string label, ofTrueTypeFont * _font,  bool bState, int width = 0, margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         bDrawBackground = true;
         uniqueName = _uniqueName;
         bToggled = bState;
@@ -587,14 +587,14 @@ public:
     
     textLabelToggleWithImage(margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         bDrawBackground = true;
         bToggled = false;
     }
     
     textLabelToggleWithImage(string _uniqueName, string label, ofTrueTypeFont * _font,  bool bState, int width = 0, margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         bDrawBackground = true;
         uniqueName = _uniqueName;
         bToggled = bState;
@@ -638,12 +638,12 @@ public:
     
     textFieldWithLabel( margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
     }
     
     textFieldWithLabel( string _uniqueName, string labelName, string valueName, ofTrueTypeFont * _font, float width = 0, margin m = margin()){
         setMargin(m);
-        node::node();
+        //node::node();
         setFont(_font);
         uniqueName = _uniqueName;
         setup(labelName, valueName, width);
@@ -702,7 +702,7 @@ public:
     }
     
     virtual bool handleMouse( ofPoint mouse, bool bPressed ){
-        if (!bVisible) return;
+        if (!bVisible) return false;
         return value.handleMouse(mouse, bPressed);
     }
     
